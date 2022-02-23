@@ -11,7 +11,7 @@ target_link_libraries(echo_server ${RPCLIB_LIBS} ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(
         echo_server
         PROPERTIES
-        CXX_STANDARD 14
+        CXX_STANDARD 17
         COMPILE_FLAGS "${CMAKE_CXX_FLAGS} ${RPCLIB_EXTRA_FLAGS}")
 target_compile_definitions(echo_server PUBLIC ${RPCLIB_COMPILE_DEFINITIONS})
 
@@ -20,6 +20,6 @@ target_link_libraries(echo_client ${RPCLIB_LIBS} ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(
         echo_client
         PROPERTIES
-        CXX_STANDARD 14
+        CXX_STANDARD 17
         COMPILE_FLAGS "${CMAKE_CXX_FLAGS} ${RPCLIB_EXTRA_FLAGS}")
 target_compile_definitions(echo_client PUBLIC ${RPCLIB_COMPILE_DEFINITIONS})

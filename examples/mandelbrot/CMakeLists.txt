@@ -9,7 +9,7 @@ if(${SFML_FOUND})
         include_directories(${RPCLIB_INCLUDE_DIR} ${SFML_INCLUDE_DIR})
 
         add_executable(mandelbrot_server mandelbrot_server.cc)
-        target_link_libraries(mandelbrot_server ${RPCLIB_LIBS})
+        target_link_libraries(mandelbrot_server ${RPCLIB_LIBS} pthread)
         set_target_properties(
                 mandelbrot_server
                 PROPERTIES
@@ -18,7 +18,7 @@ if(${SFML_FOUND})
         target_compile_definitions(mandelbrot_server PUBLIC ${RPCLIB_COMPILE_DEFINITIONS})
 
         add_executable(mandelbrot_client mandelbrot_client.cc)
-        target_link_libraries(mandelbrot_client ${RPCLIB_LIBS} ${SFML_LIBRARIES})
+        target_link_libraries(mandelbrot_client ${RPCLIB_LIBS} ${SFML_LIBRARIES} pthread)
         set_target_properties(
                 mandelbrot_client
                 PROPERTIES
